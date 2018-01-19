@@ -189,7 +189,7 @@ void Train(const string& out_file, const int& factor,
   Model model(factor, word_vecs[0].size(), word_vecs.size());
   double avg_error = 1, prev_avg_err = 0;
   int iter = 0;
-  while (iter < 20 || (avg_error > 0.05 && iter < 75 && abs(avg_error - prev_avg_err) > 0.001)) {
+  while (iter < 500 || (avg_error > 0.05 && iter < 1000 && abs(avg_error - prev_avg_err) > 0.001)) {
     iter += 1;
     cerr << "\nIteration: " << iter << endl;
     unsigned num_words = 0;
